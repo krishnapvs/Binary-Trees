@@ -33,3 +33,18 @@ class BinaryTree:
 
 	def setRoot(self,value):
 		self.key=value
+
+
+
+# Testing
+r = BinaryTree('a')
+print(r.getRoot())
+print(r.getLeft())
+r.setLeft('b')
+print(r.getLeft())
+print(r.getLeft().getRoot())
+r.setRight('c')
+print(r.getRight())
+print(r.getRight().getRoot())
+r.getRight().setRoot('hello')
+print(r.getRight().getRoot())
