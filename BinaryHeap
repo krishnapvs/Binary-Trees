@@ -27,8 +27,7 @@ class BinaryHeap:
 		self.heapify()
 		return temp
 
-	def heapify(self):
-		i=1
+	def heapify(self,i=1):		
 		while ( i*2 =< self.currentsize):
 			mc=self.minimum(i)
 			if self.heapList[mc] < self.heapList[i]:
@@ -46,6 +45,14 @@ class BinaryHeap:
 			else:
 				return i*2
 
+	def buildHeap(self,alist):
+		self.currentsize=len(alist)
+		i=self.currentsize/2
+		self.heapList=[0]+alist[:]
+		while i>0:
+			self.heapify(i)
+			i = i-1
+	
 
 
 
