@@ -1,4 +1,4 @@
-# Binary Heap implementation
+# Binary Heap implementation for minimum Heap
 
 class BinaryHeap:
 	def __init__(self,):
@@ -37,6 +37,7 @@ class BinaryHeap:
 			i=mc
 
 	def minimum(self,i):
+	#returns the minimum element
 		if 2*i+1 > self.currentsize:
 			return i*2
 		else:
@@ -46,6 +47,7 @@ class BinaryHeap:
 				return i*2
 
 	def buildHeap(self,alist):
+	# creating a heap from a list start to end
 		self.currentsize=len(alist)
 		i=self.currentsize/2
 		self.heapList=[0]+alist[:]
