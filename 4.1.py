@@ -35,3 +35,35 @@ def height(tree):
         return 0
     else:
         return max(height(tree.left),height(tree.right))+1
+
+def isBalancedImproved(tree):
+    if checkHeight(tree)==-1:
+        return False
+    else:
+        return True
+
+def checkHeight(tree):
+    if not tree:
+        return 0
+    else:
+        a=checkHeight(tree.left)
+        if a==-1:
+            return -1
+        b=checkHeight(tree.right)
+        if b==-1:
+            return -1
+        if abs(a-b)>1:
+            return -1
+        return max(a,b)+1
+
+    
+
+tree= BinTree(10)
+tree.addNode(5)
+tree.addNode(15)
+tree.addNode(2)
+tree.addNode(1)
+tree.addNode(7)
+#tree.addNode(13)
+print isBalanced(tree)
+print isBalancedImproved(tree)
